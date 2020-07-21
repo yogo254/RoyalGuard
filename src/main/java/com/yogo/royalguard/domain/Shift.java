@@ -1,12 +1,18 @@
 package com.yogo.royalguard.domain;
 
 import java.util.Date;
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * Shift
  */
+@Document
 public class Shift {
 
+    @Id
     private String id;
     private String name;
     private Date start, end;
@@ -14,7 +20,9 @@ public class Shift {
     private String location;
     private String supervisorId;
     private Date checkin;
+    private String category;
     private Date checkout;
+    private List<Guard> assignedGuards;
 
     private Date timestamp;
 
@@ -88,6 +96,22 @@ public class Shift {
 
     public void setTimestamp(Date timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public List<Guard> getAssignedGuards() {
+        return assignedGuards;
+    }
+
+    public void setAssignedGuards(List<Guard> assignedGuards) {
+        this.assignedGuards = assignedGuards;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
 }
