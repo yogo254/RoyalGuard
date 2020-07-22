@@ -6,6 +6,20 @@
   opacity: 0.99;
   border-radius: 20px;
 }
+.sub-component {
+  margin-top: 6%;
+}
+
+.admin-actions {
+  display: flex;
+  flex-direction: c;
+  justify-content: space-evenly;
+  margin-top: 2%;
+}
+.admin-actions li {
+  background-color: #0d324c;
+  border-radius: 5px;
+}
 
 .showcase {
   background: url(/images/background.jpg);
@@ -110,4 +124,10 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+@media only screen and (min-width: 960px) {
+  .form {
+    padding: 10% 10% 10% 10%;
+  }
 }
