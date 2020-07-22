@@ -9,6 +9,17 @@
 .sub-component {
   margin-top: 6%;
 }
+#mobile-demo {
+  background-color: #0d324c;
+}
+.user-view p {
+  text-transform: capitalize !important;
+  text-decoration: overline;
+  color: #e08209 !important;
+
+  opacity: 0.99;
+  font-size: larger !important;
+}
 
 .admin-actions {
   display: flex;
@@ -94,6 +105,9 @@
     margin-left: 15px !important;
     margin-right: 15px !important;
     margin-bottom: 15px !important;
+  }
+  .services {
+    margin-top: 5%;
   }
   .avatar {
     width: 200px;

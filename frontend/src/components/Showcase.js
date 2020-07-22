@@ -3,6 +3,7 @@ import React from "react";
 const Showcase = () => {
   return (
     <div className="showcase ">
+      <img src="icons/second.png" />
       <h1 className="title ">Royal Guard</h1>
       <br />
       <h5>

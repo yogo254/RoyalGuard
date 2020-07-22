@@ -12,6 +12,7 @@ import NavBar from "./components/Navbar";
 import Showcase from "./components/Showcase";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
+import Services from "./components/Services";
 
 function App() {
   let options = {};
@@ -36,6 +37,7 @@ function App() {
 
             <Switch>
               <Route exact path="/login" component={Login} />
+              <Route exact path="/services" component={Services} />
             </Switch>
           </div>
         </Fragment>

@@ -11,7 +11,7 @@ const middleware = [thunk];
 const persistConfig = {
   key: "royalguard",
   storage,
-  whitelist: ["context"]
+  whitelist: ["context", "sessions", "guards"]
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

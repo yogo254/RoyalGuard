@@ -43,7 +43,7 @@ const ViewSessions = ({ sessions }) => {
 };
 
 const mapPropsToState = state => ({
-  sessions: state.sessions.content
+  sessions: state.sessions
 });
 
 export default connect(mapPropsToState)(ViewSessions);

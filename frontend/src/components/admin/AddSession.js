@@ -1,8 +1,24 @@
 import React from "react";
+import uuid from "uuid/v4";
+import { connect } from "react-redux";
+import { addSession } from "../../actions/Session";
 
-const AddSession = () => {
-  const submit = e => {
-    e.preventDefault();
+const AddSession = ({ addSession }) => {
+  const submit = event => {
+    event.preventDefault();
+
+    let formData = new FormData(event.target).entries();
+    let data = [...[...formData]];
+    let obj = {};
+
+    obj.id = uuid();
+
+    data.forEach(d => {
+      let name = d[0];
+      let value = d[1];
+      obj[`${name}`] = value;
+    });
+    addSession(obj);
   };
   return (
     <div className="row">
@@ -56,7 +72,9 @@ const AddSession = () => {
                 required
               />
             </div>
-            <button className="btn">Add</button>
+            <button type="submit" className="btn">
+              Add
+            </button>
           </div>
         </form>
       </div>
@@ -64,4 +82,4 @@ const AddSession = () => {
   );
 };
 
-export default AddSession;
+export default connect(null, { addSession })(AddSession);

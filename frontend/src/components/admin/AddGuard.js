@@ -1,8 +1,24 @@
 import React from "react";
+import uuid from "uuid/v4";
+import { addGuard } from "../../actions/Guard";
+import { connect } from "react-redux";
 
-const AddGuard = () => {
-  const submit = e => {
-    e.preventDefault();
+const AddGuard = ({ addGuard }) => {
+  const submit = event => {
+    event.preventDefault();
+
+    let formData = new FormData(event.target).entries();
+    let data = [...[...formData]];
+    let obj = {};
+
+    obj.id = uuid();
+
+    data.forEach(d => {
+      let name = d[0];
+      let value = d[1];
+      obj[`${name}`] = value;
+    });
+    addGuard(obj);
   };
   return (
     <div className="row">
@@ -89,12 +105,14 @@ const AddGuard = () => {
                 required
               />
             </div>
-            <button className="btn">Add</button>
           </div>
+          <button type="submit" className="btn">
+            Add
+          </button>
         </form>
       </div>
     </div>
   );
 };
 
-export default AddGuard;
+export default connect(null, { addGuard })(AddGuard);

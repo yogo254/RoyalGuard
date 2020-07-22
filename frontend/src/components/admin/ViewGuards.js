@@ -46,7 +46,7 @@ const ViewGuards = ({ guards }) => {
 };
 
 const mapPropsToState = state => ({
-  guards: state.guards.content
+  guards: state.guards
 });
 
 export default connect(mapPropsToState)(ViewGuards);
