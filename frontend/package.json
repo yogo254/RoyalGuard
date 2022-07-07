@@ -10,7 +10,7 @@
     "framer-motion": "^1.6.17",
     "jquery": "^3.4.1",
     "materialize-css": "^1.0.0-rc.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "particlesjs": "^2.2.3",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
